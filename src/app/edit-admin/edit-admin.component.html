@@ -1,0 +1,56 @@
+<div *ngIf="!editOrNot">
+  <div class="adminImage mt-4 text-center">
+    <img
+      width="100px"
+      height="100px"
+      class="img-fliud ambath"
+      [src]="url"
+      alt=""
+    />
+  </div>
+  <div class="adminUpdate text-center">
+    <button (click)="editToggle()" class="color btn btn-link fs-5">
+      Edit admin details <i class="fa-solid fa-pen-to-square fa-shake"></i>
+    </button>
+  </div>
+</div>
+
+<div *ngIf="editOrNot" class="realDetails px-5 pt-2 pb-4 text-center">
+  <h3>Edit admin details</h3>
+  <label>
+    <input (change)="getFile($event)" type="file" style="display: none" />
+    <img
+      width="100px"
+      height="100px"
+      class="img-fliud ambath"
+      [src]="url"
+      alt=""
+    />
+  </label>
+  <input
+    [(ngModel)]="admin.name"
+    class="form-control mt-3"
+    type="text"
+    value="admin"
+    name="name"
+  />
+  <input
+    [(ngModel)]="admin.email"
+    class="form-control mt-2"
+    type="text"
+    value="chuni"
+    name="email"
+  />
+
+  <button
+    type="button"
+    class="btn btn-outline-dark mt-2 me-2"
+    (click)="cancel()"
+  >
+    Cancel
+  </button>
+
+  <button (click)="updateadmin()" class="btn btn-success mt-2" type="button">
+    Update
+  </button>
+</div>

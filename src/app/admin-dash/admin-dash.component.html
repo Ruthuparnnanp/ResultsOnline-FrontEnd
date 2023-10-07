@@ -1,0 +1,193 @@
+<!-- ------------------------------------------header=------------------------------------------------------- -->
+<header>
+  <nav class="navbar fs-5 navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <img
+        class="me-2"
+        width=""
+        height="40px"
+        src="../../assets/images/violetLogo2.png"
+        alt=""
+      />
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a
+              id="linkk"
+              class="nav-link kpp"
+              aria-current="page"
+              routerLink="/home"
+              >Home</a
+            >
+          </li>
+          <!-- <li class="nav-item">
+            <a
+              class="nav-link active"
+              aria-current="page"
+              routerLink="/students"
+              >Students</a
+            >
+          </li> -->
+        </ul>
+
+        <!-- dropDowns Cutom -->
+
+        <!-- for sort -->
+
+        <div class="dropdown">
+          <button
+            class="btn kpp btn-dark-outline dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Sort
+          </button>
+          <ul class="dropdown-menu">
+            <li>
+              <a (click)="sort()" class="dropdown-item kpp">By Name</a>
+            </li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a (click)="sortById()" class="dropdown-item kpp">By ID</a></li>
+          </ul>
+        </div>
+
+        <!-- --------------- -->
+
+        <!-- for display list -->
+        <div class="dropdown me-2">
+          <button
+            class="btn kpp btn-dark-outline dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Display Students
+          </button>
+          <ul class="dropdown-menu">
+            <li>
+              <a (click)="displayAll()" class="dropdown-item kpp">All</a>
+            </li>
+            <li><hr class="dropdown-divider" /></li>
+            <li>
+              <a (click)="displayActiveStud()" class="dropdown-item kpp"
+                >Active</a
+              >
+            </li>
+            <li><hr class="dropdown-divider" /></li>
+            <li>
+              <a (click)="displayInActiveStud()" class="dropdown-item kpp"
+                >InActive</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- --------------------------------------------------------------------- -->
+
+        <form class="d-flex" role="search">
+          <input
+            class="search form-control me-2"
+            type="search"
+            placeholder="Search Student"
+            aria-label="Search"
+            name="mybad"
+            [(ngModel)]="searchTerm"
+          />
+        </form>
+      </div>
+    </div>
+  </nav>
+</header>
+<!-- ------------------------------------------------------------------------------------------------------- -->
+<div class="container mt-5">
+  <!-- <div class="box d-flex align-items-baseline">
+    <button (click)="sort()" class="btn btn-warning" type="button">sort</button>
+  </div> -->
+  <div class="wrapper">
+    <h1 id="stud">STUDENTS</h1>
+
+    <button
+      routerLink="add"
+      id="addUser"
+      class="btn btn-outline-primary"
+      type="button"
+      (click)="register()"
+    >
+      <i class="fa-solid fa-user-plus fa-beat me-2"></i>REGISTER
+    </button>
+  </div>
+
+  <div class="mt-3 table">
+    <table
+      class="table custom-table shadow table-bordered table-striped table-hover"
+    >
+      <thead class="table-dark fw-bold">
+        <tr>
+          <th>ID</th>
+          <th>NAME</th>
+          <th>EMAIL</th>
+          <th>CLASS</th>
+          <th>STATUS</th>
+          <th>ACTIONS</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngIf="(allUsers | search : searchTerm : 'name').length === 0">
+          <th class="fw-bolder text-danger">User doesn't exist ❌</th>
+        </tr>
+        <tr
+          *ngFor="
+            let user of allUsers
+              | search : searchTerm : 'name'
+              | paginate
+                : {
+                    itemsPerPage: 8,
+                    currentPage: page,
+                    totalItems: totalLength
+                  }
+          "
+          [hidden]="user.id === 1"
+        >
+          <th>{{ user.id }}</th>
+          <th>{{ user.name }}</th>
+          <th>{{ user.email }}</th>
+          <th>{{ user.class }}</th>
+          <th>
+            <span [ngClass]="user.active == 1 ? 'active' : 'inactive'">{{
+              user.active == 1 ? "Active" : "InActive"
+            }}</span>
+          </th>
+          <th>
+            <a routerLink="/edit/{{ user.id }}" title="Edit"
+              ><i class="fa-solid fa-pen text-success me-4 btn"></i
+            ></a>
+            <i
+              title="Delete"
+              (click)="confirmDelete(user.id)"
+              class="fa-solid fa-trash text-danger btn"
+            ></i>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <button (click)="downloadPdf()" type="button" class="btn btn-outline-warning">
+    <i class="fa-solid me-2 fa-download fa-bounce"></i>DOWNLOAD
+  </button>
+
+  <div class="setup">
+    <pagination-controls (pageChange)="page = $event"></pagination-controls>
+  </div>
+</div>

@@ -1,0 +1,177 @@
+<header>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <img
+        width=""
+        height="40px"
+        src="../../assets/images/violetLogo2.png"
+        alt=""
+      />
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <!-- <li class="nav-item">
+            <a class="nav-link active" aria-current="page">Home</a>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- ------------------------------------------------------------------------------------------------------------------------------ -->
+<section class="vh-100">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img
+          src="https://static.vecteezy.com/system/resources/previews/001/991/652/original/sign-in-page-flat-design-concept-illustration-icon-account-login-user-login-abstract-metaphor-can-use-for-landing-page-mobile-app-ui-posters-banners-free-vector.jpg"
+          class="img-fluid"
+          alt="Sample image"
+        />
+      </div>
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+        <form>
+          <div
+            class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start"
+          >
+            <p class="lead fw-normal mb-0 me-3">
+              <b
+                style="
+                  font-family: 'Orbitron', sans-serif;
+                  font-weight: 600;
+                  letter-spacing: 1px;
+                "
+                >LOGIN </b
+              >with
+            </p>
+            <button
+              type="button"
+              class="btn btn-outline-dark btn-floating mx-1"
+            >
+              <a class="text-dark color" href="https://www.facebook.com/login/"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+            </button>
+
+            <button
+              type="button"
+              class="btn btn-outline-dark btn-floating mx-1"
+            >
+              <a
+                class="text-dark color"
+                href="https://twitter.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJsYW5nIjoiZW4ifQ%3D%3D%22%7D"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+            </button>
+
+            <button
+              type="button"
+              class="btn btn-outline-dark btn-floating mx-1"
+            >
+              <a class="text-dark color" href="https://www.linkedin.com/login">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </button>
+          </div>
+
+          <div class="divider d-flex align-items-center my-4">
+            <p class="text-center fw-bold mx-3 mb-0">Or</p>
+          </div>
+
+          <!-- Email input -->
+          <div class="form-floating mb-4">
+            <input
+              type="email"
+              name="email"
+              id="form3Example3"
+              [(ngModel)]="adminEmail"
+              class="form-control form-control-lg"
+              placeholder="Enter a valid email address"
+            />
+            <label class="form-label" for="form3Example3">Email address</label>
+          </div>
+
+          <!-- Password input -->
+          <div class="form-floating mb-3">
+            <input
+              type="password"
+              name="password"
+              id="form3Example4"
+              [(ngModel)]="adminPwd"
+              class="form-control form-control-lg"
+              placeholder="Enter password"
+            />
+            <label class="form-label" for="form3Example4">Password</label>
+          </div>
+
+          <div
+            class="d-flex justify-content-between text-danger align-items-center"
+          >
+            <!-- Checkbox -->
+            <!-- <div class="form-check mb-0">
+              <input
+                class="form-check-input me-2"
+                type="checkbox"
+                value=""
+                id="form2Example3"
+              />
+              <label class="form-check-label" for="form2Example3">
+                Remember me
+              </label>
+            </div> -->
+            <a href="" class="text-body">Forgot password?</a>
+          </div>
+
+          <div class="text-center text-lg-start mt-4 pt-2">
+            <button
+              (click)="loginCheck()"
+              type="button"
+              class="btn btn-primary btn-lg"
+              style="padding-left: 2.5rem; padding-right: 2.5rem"
+            >
+              Login
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div
+    class="loginFooter d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5"
+  >
+    <!-- Copyright -->
+    <div class="text-dark mb-3 mb-md-0">
+      Copyright © 2020. All rights reserved.
+    </div>
+    <!-- Copyright -->
+
+    <!-- Right -->
+    <div>
+      <a href="#!" class="text-white me-4">
+        <i class="text-dark fab fa-facebook-f"></i>
+      </a>
+      <a href="#!" class="text-white me-4">
+        <i class="text-dark fab fa-twitter"></i>
+      </a>
+      <a href="#!" class="text-white me-4">
+        <i class="text-dark fab fa-google"></i>
+      </a>
+      <a href="#!" class="text-white">
+        <i class="text-dark fab fa-linkedin-in"></i>
+      </a>
+    </div>
+    <!-- Right -->
+  </div>
+</section>

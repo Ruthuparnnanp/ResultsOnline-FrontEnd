@@ -1,0 +1,29 @@
+.custom {
+  padding: 4rem;
+}
+
+.register {
+  font-weight: bolder;
+  letter-spacing: 1px;
+  font-family: "Orbitron", sans-serif;
+  font-size: 2rem;
+  align-self: baseline;
+}
+
+.kpp {
+  color: rgb(84, 79, 197);
+}
+
+#linkk {
+  border-bottom: 2px solid transparent;
+}
+
+#linkk:hover {
+  border-bottom: 2px solid rgb(84, 79, 197);
+}
+
+@media (max-width: 830px) {
+  .custom {
+    padding: 1rem;
+  }
+}

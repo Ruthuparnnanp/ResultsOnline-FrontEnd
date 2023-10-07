@@ -1,0 +1,75 @@
+:root {
+  --main-color: rgb(84, 79, 197);
+}
+
+#stud {
+  font-weight: bolder;
+  letter-spacing: 0.6px;
+  font-family: "Orbitron", sans-serif;
+  font-size: 2rem;
+  align-self: baseline;
+}
+
+.custom-table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 10px;
+}
+
+::-moz-placeholder {
+  color: rgb(84, 79, 197);
+}
+
+.search:placeholder-shown {
+  border: 2px solid rgb(84, 79, 197);
+}
+
+.customBtn {
+  color: white;
+  background-color: green;
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.active {
+  letter-spacing: 1.6px;
+  color: rgb(15, 238, 15);
+}
+
+.inactive {
+  letter-spacing: 1.6px;
+  color: red;
+}
+
+.setup {
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+}
+
+.setup::ng-deep .ngx-pagination .current {
+  background-color: rgb(131, 127, 212);
+  border-radius: 6px;
+}
+
+.table {
+  overflow: auto;
+  scrollbar-color: red white;
+}
+
+.kpp {
+  color: rgb(84, 79, 197);
+}
+
+#linkk {
+  border-bottom: 2px solid transparent;
+}
+
+#linkk:hover {
+  border-bottom: 2px solid rgb(84, 79, 197);
+}
